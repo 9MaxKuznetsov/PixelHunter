@@ -1,25 +1,22 @@
 {
-  "name": "keksobooking",
-  "version": "15.0.0",
+  "name": "Booking",
+  "version": "1.0.0",
   "private": true,
-  "description": "Личный проект «Кексобукинг» от HTML Academy",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:htmlacademy-javascript/486973-keksobooking.git"
-  },
-  "bugs": {
-    "url": "https://github.com/htmlacademy-javascript/486973-keksobooking/issues"
+  "description": "Booking service webapp",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server --open",
+    "eslint": "eslint src/**/*.js",
+    "test": "npm run eslint"
   },
   "devDependencies": {
-    "eslint": "5.7.0",
-    "eslint-config-htmlacademy": "0.5.2"
-  },
-  "license": "MIT",
-  "dependencies": {},
-  "scripts": {
-    "test": "eslint js/"
+    "eslint": "5.13.0",
+    "eslint-config-htmlacademy": "0.5.2",
+    "webpack": "4.29.5",
+    "webpack-cli": "3.2.3",
+    "webpack-dev-server": "3.2.1"
   },
   "engines": {
-    "node": "8.11"
+    "node": "10"
   }
 }
