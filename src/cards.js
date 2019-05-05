@@ -30,10 +30,11 @@ const createPhotoElements = (adData) => {
 
 const createCardElements = (adsData) => {
   const cardElementsFragment = document.createDocumentFragment();
-  for (const adData of adsData) {
+  for (const [index, adData] of adsData.entries()) {
     const featureElements = createFeatureElements(adData);
     const photoElements = createPhotoElements(adData);
     const adElement = createCardElement();
+
     adElement.classList.add(`hidden`);
     adElement.querySelector(`.popup__avatar`).src = adData.author.avatar;
     adElement.querySelector(`.popup__title`).textContent = adData.offer.title;
@@ -45,9 +46,14 @@ const createCardElements = (adsData) => {
     adElement.querySelector(`.popup__description`).textContent = adData.offer.description;
     adElement.querySelector(`.popup__features`).appendChild(featureElements);
     adElement.querySelector(`.popup__photos`).appendChild(photoElements);
+    adElement.setAttribute(`data-number`, index);
     cardElementsFragment.appendChild(adElement);
   }
   return cardElementsFragment;
 };
+
+// const showCardElement = (index) => {
+//   document.querySelector(`map__card[]`)
+// };
 
 export {createCardElements};

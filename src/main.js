@@ -23,7 +23,7 @@ const mainPinClickHandler = () => {
   mapBlock.classList.remove(`map--faded`);
   renderPinElements(pinsBlock, pinElements);
 };
-mainPin.addEventListener(`click`, mainPinClickHandler);
+mainPin.addEventListener(`mouseup`, mainPinClickHandler);
 
 // Inserting card elements
 mapBlock.insertBefore(cardElements, filtersBlock);
