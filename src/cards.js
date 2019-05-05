@@ -56,8 +56,16 @@ const createCardElements = (adsData) => {
 };
 
 const showCardElement = (index) => {
-  const card = document.querySelector(`.map__card[data-number="${index}"]`);
-  card.classList.remove(`hidden`);
+  const cards = document.querySelectorAll(`.map__card`);
+  // Hiding card if opened
+  for (const card of cards) {
+    if (!card.classList.contains(`hidden`)) {
+      card.classList.add(`hidden`);
+    }
+  }
+  // Showing card
+  const cardToShow = document.querySelector(`.map__card[data-number="${index}"]`);
+  cardToShow.classList.remove(`hidden`);
 };
 
 export {createCardElements};
