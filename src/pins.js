@@ -18,4 +18,9 @@ const createPinElements = (adsData) => {
   return pinElementsFragment;
 };
 
+const renderPinElements = (container, pinElements) => {
+  container.appendChild(pinElements);
+};
+
 export {createPinElements};
+export {renderPinElements};

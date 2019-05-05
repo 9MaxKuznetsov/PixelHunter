@@ -9,7 +9,6 @@ const pinsBlock = mapBlock.querySelector(`.map__pins`);
 const filtersBlock = mapBlock.querySelector(`.map__filters-container`);
 
 // Enabling page
-mapBlock.classList.remove(`map--faded`);
 
 // Creating ads mock data
 const adsData = getAdsData(MAX_ADS);

@@ -6,10 +6,10 @@ const AD_PRICE = {
   high: 1000000
 };
 const AdType = {
-  "palace": `Дворец`,
-  "flat": `Квартира`,
-  "house": `Дом`,
-  "bungalo": `Бунгало`
+  palace: `Дворец`,
+  flat: `Квартира`,
+  house: `Дом`,
+  bungalo: `Бунгало`
 };
 const AD_ROOMS = {
   min: 1,
@@ -19,11 +19,11 @@ const AD_CHECK_TIME = [`12:00`, `13:00`, `14:00`];
 const AD_FEATURES = [`wifi`, `dishwasher`, `parking`, `washer`, `elevator`, `conditioner`];
 const AD_PHOTOS = [`http://o0.github.io/assets/images/tokyo/hotel1.jpg`, `http://o0.github.io/assets/images/tokyo/hotel2.jpg`, `http://o0.github.io/assets/images/tokyo/hotel3.jpg`];
 const AD_LOCATION = {
-  "y": {
+  y: {
     min: 130,
     max: 630
   },
-  "x": {
+  x: {
     min: 0,
     max: 1200
   }
