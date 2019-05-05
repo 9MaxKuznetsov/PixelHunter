@@ -8,7 +8,8 @@ const MAIN_PIN = {
   top: 375,
   width: 65,
   height: 65,
-  tip: 0
+  tip: 22,
+  isActive: false
 };
 const mapBlock = document.querySelector(`.map`);
 const pinsBlock = mapBlock.querySelector(`.map__pins`);
@@ -26,10 +27,23 @@ const pinElements = createPinElements(adsData);
 // Creating card elements
 const cardElements = createCardElements(adsData);
 
+// Getting mainPin coords
+const getMainPinCoords = () => {
+  let mainPinCoords;
+  if (!MAIN_PIN.isActive) {
+    mainPinCoords = `${MAIN_PIN.left + MAIN_PIN.width / 2}, ${MAIN_PIN.top + MAIN_PIN.height / 2}`;
+  } else {
+    mainPinCoords = `${MAIN_PIN.left + MAIN_PIN.width / 2}, ${MAIN_PIN.top + MAIN_PIN.height + MAIN_PIN.tip}`;
+  }
+  return mainPinCoords;
+};
+
 // Enabling page & inserting pin elements
 const mainPinClickHandler = () => {
   mapBlock.classList.remove(`map--faded`);
   renderPinElements(pinsBlock, pinElements);
+  MAIN_PIN.isActive = true;
+  addressField.value = getMainPinCoords();
 };
 mainPin.addEventListener(`mouseup`, mainPinClickHandler);
 
@@ -37,5 +51,4 @@ mainPin.addEventListener(`mouseup`, mainPinClickHandler);
 mapBlock.insertBefore(cardElements, filtersBlock);
 
 // Setting mainPin coords
-const getMainPinCoords = () => `${MAIN_PIN.left + MAIN_PIN.width / 2}, ${MAIN_PIN.top + 65 / 2}`;
 addressField.value = getMainPinCoords();
